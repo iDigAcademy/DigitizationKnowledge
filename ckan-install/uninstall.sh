@@ -1,0 +1,25 @@
+#!/bin/bash
+
+sudo rm -rf ../ckan
+
+# Remove Postgresql
+sudo systemctl stop postgresql
+sudo apt-get --purge remove postgresql-17 postgresql-client-17 -y
+sudo rm -rf /etc/postgresql
+sudo rm -rf /etc/postgresql-common
+sudo rm -rf /var/lib/postgresql
+sudo rm -rf /var/log/postgresql
+sudo deluser postgres
+sudo apt autoremove -y
+
+# Remove Solr
+sudo systemctl stop solr
+sudo rm -r /opt/solr
+sudo rm -rf /var/solr
+sudo rm -rf /opt/solr-9.70
+sudo rm /etc/init.d/solr
+sudo deluser --remove-home solr
+sudo deluser --group solr
+sudo update-rc.d -f solr remove
+sudo rm -rf /etc/default/solr.in.sh
+

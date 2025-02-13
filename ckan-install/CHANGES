@@ -1,0 +1,8 @@
+- Updated `CKAN_REF` in ckan_dev.env and ckan_prod.env to ckan-2.11.2 which is the latest security patch for ckan 2.11
+- In 06_create_ckan_admin_user.sh changed `if ckan -c /data/web/digitizationknowledge/ckan/etc/ckan.ini user list > ...` to `if ckan -c $CKAN_INI user list > ...` to reflect if the file comes from prod or dev instances.
+- In 08_extensions_configuration updated the custom forms for `scheming.dataset_schemas`
+
+
+## This command is needed at some point to change the default solr schema for this custom one using the custom form fields
+- sudo cp "${SRC_DIR}/ckanext-digitizationknowledge/config/schema.xml" /var/solr/data/${SOLR_CORE_NAME}/conf/managed-schema
+- sudo service solr restart
