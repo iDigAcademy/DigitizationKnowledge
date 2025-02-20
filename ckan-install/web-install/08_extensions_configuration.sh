@@ -15,7 +15,8 @@ ckan config-tool ${CKAN_INI} "ckanext.xloader.site_url=${CKAN_SITE_URL}"
 ## Scheming
 
 ### Add the custom schemas
-ckan config-tool ${CKAN_INI} "scheming.dataset_schemas = ckanext.digitizationknowledge:schemas/digital-document.yaml \
+ckan config-tool ${CKAN_INI} "scheming.dataset_schemas = ckanext.digitizationknowledge:schemas/book.yaml \
+ckanext.digitizationknowledge:schemas/digital-document.yaml \
 ckanext.digitizationknowledge:schemas/event.yaml \
 ckanext.digitizationknowledge:schemas/learning-resource.yaml \
 ckanext.digitizationknowledge:schemas/scholarly-article.yaml \
