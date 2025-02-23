@@ -18,6 +18,6 @@ pip install 'lxml[html_clean]'
 pip install profanityfilter
 
 ### Digitization Knowledge Base Custom Extension
-pip install -e "git+https://github.com/iDigAcademy/ckanext-digitizationknowledge.git@main#egg=ckanext-digitizationknowledge"
+pip install -e $CKAN_DIGITIZATION_KNOWLEDGE_GIT
 
 deactivate
