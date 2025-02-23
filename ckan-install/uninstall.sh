@@ -4,13 +4,14 @@ sudo rm -rf ../ckan
 
 # Remove Postgresql
 sudo systemctl stop postgresql
-sudo apt-get --purge remove postgresql postgresql-client postgresql-common -y
+sudo apt-get --purge remove postgresql postgresql-client-common postgresql-common postgresql-contrib -y
 sudo rm -rf /etc/postgresql
 sudo rm -rf /etc/postgresql-common
 sudo rm -rf /var/lib/postgresql
 sudo rm -rf /var/log/postgresql
-sudo deluser --remove-home postgres
-sudo apt autoremove -y
+sudo userdel -r postgres
+sudo groupdel postgres
+sudo apt-get autoremove
 
 # Remove Solr
 sudo systemctl stop solr
