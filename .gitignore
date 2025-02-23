@@ -6,3 +6,7 @@ _ide_helper.php
 /config/ide-helper.php
 ckan-install/*.env
 index.html
+etc
+lib
+storage
+supervisor
