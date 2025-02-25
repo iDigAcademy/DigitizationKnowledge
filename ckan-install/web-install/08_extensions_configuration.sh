@@ -9,6 +9,8 @@ ckan config-tool ${CKAN_INI} "ckan.plugins = envvars activity tabledesigner data
 
 ## Xloader
 ### Creates an API token for xloader to use
+### If we want to be able to run this script safely to update configurations after installation then we should find a better place for the xloader part
+### This will create a new API token with the name of xloader everytime and so if run more than once we will have in the system several tokens with the same name
 ckan config-tool ${CKAN_INI} "ckanext.xloader.api_token = $(ckan -c $CKAN_INI user token add $CKAN_SYSADMIN_NAME xloader | tail -n 1 | tr -d '\t')"
 ckan config-tool ${CKAN_INI} "ckanext.xloader.site_url=${CKAN_SITE_URL}"
 
@@ -34,4 +36,4 @@ ckanext.digitizationknowledge:schemas/presets.yaml"
 ckan config-tool ${CKAN_INI} "ckan.comments.follow_mute_enabled = True"
 
 ### Setting that shows the comments at the end of the dataset page instead of in a separate tab
-ckan config-tool ${CKAN_INI} "ckan.comments.show_comments_tab_page = True"
+ckan config-tool ${CKAN_INI} "ckan.comments.show_comments_tab_page = False"
