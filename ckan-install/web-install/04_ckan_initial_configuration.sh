@@ -40,7 +40,7 @@ ckan config-tool ${CKAN_INI} "ckan.max_resource_size = ${CKAN_MAX_UPLOAD_SIZE_MB
 cp "${SRC_DIR}/ckan/wsgi.py" $ETC_DIR
 cp "../config/ckan-uwsgi.ini" $ETC_DIR
 
-sudo sed -i "s|CKAN_HTTP|${CKAN_HTTP}|g" "${ETC_DIR}/ckan-uwsgi.ini"
+sudo sed -i "s|CKAN_IP_PORT|${CKAN_IP_PORT}|g" "${ETC_DIR}/ckan-uwsgi.ini"
 sudo sed -i "s|SERVER_USER|${SERVER_USER}|g" "${ETC_DIR}/ckan-uwsgi.ini"
 sudo sed -i "s|ETC_DIR|${ETC_DIR}|g" "${ETC_DIR}/ckan-uwsgi.ini"
 sudo sed -i "s|LIB_DIR|${LIB_DIR}|g" "${ETC_DIR}/ckan-uwsgi.ini"
