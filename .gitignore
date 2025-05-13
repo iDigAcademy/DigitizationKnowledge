@@ -1,4 +1,3 @@
-ckan
 .gitattributes
 .idea
 _ide_helper.php
@@ -6,7 +5,13 @@ _ide_helper.php
 /config/ide-helper.php
 ckan-install/*.env
 index.html
-etc
-lib
-storage
-supervisor
+# Ignore everything in etc
+/etc/*
+# Ignore everything in lib
+/lib/*
+# Except lib/src/design
+!/lib/src/design
+# Ignore everything in stroage
+/storage/*
+# Ignore everything in supervisor
+/supervisor/*
