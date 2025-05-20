@@ -36,6 +36,7 @@ ckan config-tool ${CKAN_INI} "smtp.user = ${CKAN_SMTP_USER}"
 ckan config-tool ${CKAN_INI} "smtp.password = ${CKAN_SMTP_PASSWORD}"
 ckan config-tool ${CKAN_INI} "smtp.mail_from = ${CKAN_SMTP_MAIL_FROM}"
 ckan config-tool ${CKAN_INI} "ckan.max_resource_size = ${CKAN_MAX_UPLOAD_SIZE_MB}"
+ckan config-tool ${CKAN_INI} "licenses_group_url = https://licenses.opendefinition.org/licenses/groups/all.json"
 
 cp "${SRC_DIR}/ckan/wsgi.py" $ETC_DIR
 cp "../config/ckan-uwsgi.ini" $ETC_DIR
