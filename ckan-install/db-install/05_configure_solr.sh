@@ -7,7 +7,16 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # Check if core already exists and configure if not.
 STATUS_CODE=$(curl -sIN "http://localhost:8983/solr/$SOLR_CORE_NAME/admin/ping" | head -n 1 | awk '{print $2}')
 if [ "$STATUS_CODE" == "200" ]; then
-  echo "Core $CORE_NAME exists."
+  echo "Core $CORE_NAME exists. Updating schema..." 
+  # Copy the updated schema to the core's conf directory
+  echo "Updating Solr schema for existing core..."
+  sudo cp ${SCRIPT_DIR}/config/schema.xml /var/solr/data/${SOLR_CORE_NAME}/conf/managed-schema
+  
+  # Reload the core to apply schema changes
+  echo "Reloading Solr core to apply schema changes..."
+  sudo curl "http://localhost:8983/solr/admin/cores?action=RELOAD&core=$SOLR_CORE_NAME"
+  
+  echo "Schema update completed successfully!"
 else
   echo "Core $CORE_NAME does not exist."
 
