@@ -5,7 +5,7 @@
 . $LIB_DIR/bin/activate
 
 # Add more to the list depending which plugins were installed in the previous step
-ckan config-tool ${CKAN_INI} "ckan.plugins = envvars activity tabledesigner datatables_view datastore xloader ytp_comments digitizationknowledge scheming_datasets"
+ckan config-tool ${CKAN_INI} "ckan.plugins = envvars activity tabledesigner datatables_view datastore xloader ytp_comments digitizationknowledge_theme digitizationknowledge  scheming_datasets"
 
 ## Xloader
 ### Creates an API token for xloader to use
