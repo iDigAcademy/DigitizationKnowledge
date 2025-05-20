@@ -134,6 +134,7 @@ attribute with the form `ckan-X.Y` -->
     <field name="discipline" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="equipment" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="in_language" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="digitization_academy_course" type="string" indexed="true" stored="true" multiValued="true"/>
     <!-- end scheming dataset custom fields -->
 
     <field name="capacity" type="string" indexed="true" stored="true" multiValued="false"/>
